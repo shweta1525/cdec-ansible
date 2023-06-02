@@ -1,0 +1,8 @@
+- name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
+  hosts: all
+  tasks:
+   - name: Ping my hosts
+     ansible.builtin.file:
+      path: /home/ec2-user/demo.txt
+      state: touch
+      mode: u=rw,g=r,o=r   
