@@ -1,0 +1,11 @@
+- name: Example Simple Variable
+  hosts: all
+  become: yes
+  vars:
+    username: devops      #declare username as a variable 
+
+  tasks:
+  - name: Add the user {{ username }}   #devops
+    user:
+      name: "{{ username }}"
+      state: present
